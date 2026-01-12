@@ -1,18 +1,24 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>404 - Sidan finns inte</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 - Page Not Found | WinningNightsResort</title>
     <meta
       name="description"
-      content="Sidan finns inte. Du kan testa igen eller kontakta oss vid behov."
+      content="The page you requested could not be found at WinningNightsResort."
     />
     <style>
       :root {
-        --hs-404c-ink: #18222b;
-        --hs-404c-cloud: #eef2f1;
-        --hs-404c-line: rgba(24, 34, 43, 0.12);
+        --wnr-ink: #f0f0f0;
+        --wnr-ink-muted: #a0a0a0;
+        --wnr-accent: #e94560;
+        --wnr-accent-soft: #ff6b6b;
+        --wnr-deep: #1a1a2e;
+        --wnr-mid: #16213e;
+        --wnr-bright: #0f3460;
+        --wnr-font-display: "Georgia", serif;
+        --wnr-font-body: "Arial", sans-serif;
       }
 
       * {
@@ -25,48 +31,105 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 24px;
-        background: var(--hs-404c-cloud);
-        color: var(--hs-404c-ink);
-        font-family: "Optima", "Candara", "Trebuchet MS", sans-serif;
+        padding: 32px 20px;
+        background:
+          radial-gradient(circle at 20% 15%, rgba(233, 69, 96, 0.3), transparent 55%),
+          radial-gradient(circle at 80% 5%, rgba(255, 107, 107, 0.25), transparent 45%),
+          linear-gradient(135deg, var(--wnr-deep) 0%, var(--wnr-mid) 50%, var(--wnr-bright) 100%);
+        color: var(--wnr-ink);
+        font-family: var(--wnr-font-body);
       }
 
-      .hs-404c-panel {
-        max-width: 520px;
-        width: 100%;
-        padding: 26px 30px;
-        border-radius: 18px;
-        border: 1px solid var(--hs-404c-line);
-        background: #fff;
+      .wnr-404-shell {
+        width: min(920px, 100%);
       }
 
-      .hs-404c-title {
-        margin: 0 0 10px;
-        font-size: 1.8rem;
+      .wnr-404-card {
+        background: linear-gradient(145deg, rgba(22, 33, 62, 0.94), rgba(15, 52, 96, 0.98));
+        border-radius: 24px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 48px 42px;
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+        position: relative;
+        overflow: hidden;
       }
 
-      .hs-404c-text {
-        margin: 0 0 12px;
-        line-height: 1.6;
+      .wnr-404-accent {
+        width: 120px;
+        height: 6px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, var(--wnr-accent), var(--wnr-accent-soft));
+        margin-bottom: 22px;
       }
 
-      .hs-404c-meta {
+      .wnr-404-brand {
+        color: var(--wnr-accent-soft);
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        font-size: 0.8rem;
+        font-weight: 700;
+      }
+
+      .wnr-404-code {
+        margin: 10px 0 8px;
+        font-family: var(--wnr-font-display);
+        font-size: clamp(4.2rem, 12vw, 7rem);
+        color: var(--wnr-accent);
+        text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.45);
+      }
+
+      .wnr-404-title {
+        margin: 0 0 16px;
+        font-family: var(--wnr-font-display);
+        font-size: clamp(2rem, 4vw, 2.8rem);
+        color: var(--wnr-ink);
+      }
+
+      .wnr-404-text {
+        margin: 0 0 14px;
+        max-width: 680px;
+        line-height: 1.7;
+        font-size: 1.1rem;
+        color: var(--wnr-ink);
+      }
+
+      .wnr-404-meta {
+        margin-top: 26px;
+        padding: 16px 18px;
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(26, 26, 46, 0.65);
+        color: var(--wnr-ink-muted);
         font-size: 0.95rem;
-        color: #4c5a64;
+      }
+
+      .wnr-404-meta strong {
+        color: var(--wnr-accent-soft);
+      }
+
+      @media (max-width: 600px) {
+        .wnr-404-card {
+          padding: 36px 24px;
+        }
       }
     </style>
   </head>
   <body>
-    <main class="hs-404c-panel">
-      <h1 class="hs-404c-title">Sidan finns inte</h1>
-      <p class="hs-404c-text">
-        Du hamnade på en sida som inte längre finns här. Det kan vara en gammal länk eller en
-        felskriven adress.
-      </p>
-      <p class="hs-404c-text">
-        Om du behöver hjälp, ring oss eller mejla så hjälper vi gärna.
-      </p>
-      <div class="hs-404c-meta">Felkod 404</div>
+    <main class="wnr-404-shell">
+      <section class="wnr-404-card" role="status" aria-live="polite">
+        <div class="wnr-404-accent"></div>
+        <div class="wnr-404-brand">WinningNightsResort</div>
+        <div class="wnr-404-code">404</div>
+        <h1 class="wnr-404-title">Page not found</h1>
+        <p class="wnr-404-text">
+          The page you requested does not exist or has been moved. Double-check the address and try
+          again.
+        </p>
+        <p class="wnr-404-text">
+          If you need assistance, our team is happy to help with reservations and general questions.
+        </p>
+        <div class="wnr-404-meta"><strong>Error code:</strong> 404</div>
+      </section>
     </main>
   </body>
 </html>
