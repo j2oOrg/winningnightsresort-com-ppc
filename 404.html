@@ -107,6 +107,34 @@
         color: var(--wnr-accent-soft);
       }
 
+      .wnr-404-actions {
+        margin-top: 22px;
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .wnr-404-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 14px 34px;
+        border-radius: 999px;
+        background: linear-gradient(45deg, var(--wnr-accent), var(--wnr-accent-soft));
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        box-shadow: 0 10px 24px rgba(233, 69, 96, 0.35);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .wnr-404-button:hover,
+      .wnr-404-button:focus-visible {
+        transform: translateY(-1px);
+        box-shadow: 0 12px 30px rgba(233, 69, 96, 0.45);
+      }
+
       @media (max-width: 600px) {
         .wnr-404-card {
           padding: 36px 24px;
@@ -128,6 +156,11 @@
         <p class="wnr-404-text">
           If you need assistance, our team is happy to help with reservations and general questions.
         </p>
+        <div class="wnr-404-actions">
+          <a class="wnr-404-button" href="https://winningnightsresort.com/" aria-label="Return to WinningNightsResort homepage">
+            Return Home
+          </a>
+        </div>
         <div class="wnr-404-meta"><strong>Error code:</strong> 404</div>
       </section>
     </main>
